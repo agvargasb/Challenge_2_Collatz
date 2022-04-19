@@ -5,9 +5,9 @@ collatz = Collatz.new
 N = 499_999
 
 
-lengths = [1, 2]
+lengths = [1]
 
-(3..N).each do |n|
+(2..N).each do |n|
   value = n
   length = 0
 

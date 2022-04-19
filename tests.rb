@@ -11,9 +11,5 @@ puts collatz.next(3), collatz.next(26)
 
 puts '-----------'
 
-(1..10).each do |i|
-  next_c = collatz.next(i)
-  puts next_c
-  length = 1
-end
+puts collatz.length(410_011, optimal: true)
 

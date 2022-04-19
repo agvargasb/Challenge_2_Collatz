@@ -28,7 +28,26 @@ class Collatz
     num
   end
 
-  def length(num)
-    sequence(num).size
+  def length(num, optimal: false)
+    case optimal
+    when false
+      sequence(num).size
+    when true
+      lengths = [1]
+
+      (2..num).each do |n|
+        value = n
+        length = 0
+
+        while value > lengths.size
+          value = self.next(value)
+          length += 1
+        end
+
+        lengths.append(length + lengths[value - 1])
+      end
+
+      lengths[-1]
+    end
   end
 end
